@@ -1,0 +1,27 @@
+﻿@model HastaneOtomasyonu.EntityLayer.Models.Entity.Personel
+
+@{
+    ViewData["Title"] = "PersonelEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>PersonelEkle</h1>
+<br />
+@using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post))
+{
+    <form method="post">
+    @Html.LabelFor(x => x.PersonelAdı)
+    @Html.TextBoxFor(x => x.PersonelAdı, new { @class = "form-control" })
+    @Html.LabelFor(x => x.PersonelSoyadı)
+    @Html.TextBoxFor(x => x.PersonelSoyadı, new { @class = "form-control" })
+        <label for="status">Çalışan Türü:</label>
+        <select id="status" name="Status">
+            <option value="Doktor">Doktor</option>
+            <option value="Teknik Personel">Teknik Personel</option>
+        </select>
+    @Html.HiddenFor(x => x.KlinikID)
+    @Html.HiddenFor(x => x.PersonelID)
+    <br />
+    <button type="submit">Kaydet</button>
+    </form>
+}

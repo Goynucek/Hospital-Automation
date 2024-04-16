@@ -1,0 +1,35 @@
+﻿@using HastaneOtomasyonu.EntityLayer.Models.Entity
+@model List<Klinik>
+
+@{
+    ViewData["Title"] = "Randevu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Randevu</h1>
+
+<br />
+<div class="table-responsive">
+    <table class="table">
+        <caption>List of Klinik</caption>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Klinik Adı</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <th scope="row">@c.KlinikID</th>
+                    <td>@c.KlinikAdı</td>
+                    <td><a href="/HastaKayıt/RandevuAlındı/@c.KlinikID" class="btn btn-primary">Seç</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Klinikler/KlinikEkle/@ViewBag.id" class="btn btn-info">Ekle</a>
+</div>
+

@@ -1,0 +1,39 @@
+﻿@using HastaneOtomasyonu.EntityLayer.Models.Entity
+@model List<Muayane>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Hastalar</h1>
+<br />
+<div class="table-responsive">
+    <table class="table">
+        <caption>List of Poliklinik</caption>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Adı</th>
+                <th scope="col">Soyadı</th>
+                <th scope="col">Teşhis</th>
+                <th scope="col">Geçmiş Randevular</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <th scope="row"></th>
+                    <td>@c.hasta.HastaAdı</td>
+                    <td>@c.hasta.HastaSoyadı</td>
+                    <td><a href="/Doktor/Teshis/@c.MuayaneId" class="btn btn-success">Teşhis</a></td>
+                    <td><a href="/Doktor/HastaGecmis/@c.HastaID" class="btn btn-warning">Görüntüle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/HastaKayıt/Index" class="btn btn-info">Ekle</a>
+</div>
+
+

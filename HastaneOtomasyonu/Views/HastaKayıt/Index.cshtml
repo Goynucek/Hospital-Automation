@@ -1,0 +1,18 @@
+﻿@model HastaneOtomasyonu.EntityLayer.Models.Entity.Hasta
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Hasta Kayıt</h1>
+<br/>
+
+@using (Html.BeginForm("Index", "HastaKayıt", FormMethod.Post))
+{
+    <div class="mb-3">
+        <label class="form-label">Tc Kimlik No</label>
+        @Html.TextBoxFor(x => x.HastaTCNO, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Gönder</button>
+}

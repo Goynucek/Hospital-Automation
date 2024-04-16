@@ -1,0 +1,34 @@
+﻿@model HastaneOtomasyonu.EntityLayer.Models.Entity.Hasta
+
+@{
+    ViewData["Title"] = "HastaEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Hasta Kayıt</h1>
+<br/>
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.HastaAdı)
+    @Html.TextBoxFor(x => x.HastaAdı, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.HastaSoyadı)
+    @Html.TextBoxFor(x => x.HastaSoyadı, new { @class = "form-control" })    
+    
+    @Html.LabelFor(x => x.HastaTCNO)
+    @Html.TextBoxFor(x => x.HastaTCNO, new { @class = "form-control" })       
+    
+    <br />
+    @Html.LabelFor(x => x.KanGrubu)
+    <select name="KanGrubu">
+        <option value="A rh+">A rh+</option>
+        <option value="A rh-">A rh-</option>
+        <option value="B rh+">B rh+</option>
+        <option value="B rh-">B rh-</option>        
+        <option value="AB rh+">AB rh+</option>
+        <option value="AB rh-">AB rh-</option>        
+        <option value="O rh+">O rh+</option>
+        <option value="O rh-">O rh-</option>
+    </select>
+    <br />
+    <button type="submit">Kaydet</button>
+</form>

@@ -1,0 +1,33 @@
+﻿@using HastaneOtomasyonu.EntityLayer.Models.Entity
+@model List<Personel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Personel</h1>
+
+<div class="table-responsive">
+    <table class="table">
+        <caption>List of Poliklinik</caption>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Poliklinik Adı</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <th scope="row">@c.PersonelAdı</th>
+                    <td>@c.PersonelSoyadı</td>
+                    <td>@c.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Personel/PersonelEkle" class="btn btn-info">Ekle</a>
+</div>

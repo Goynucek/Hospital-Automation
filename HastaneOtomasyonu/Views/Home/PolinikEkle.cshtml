@@ -1,0 +1,17 @@
+﻿@model HastaneOtomasyonu.EntityLayer.Models.Entity.Poliklinik
+@{
+    ViewData["Title"] = "PolinikEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2>Poliklinik Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.PoliklinikAdı)
+    @Html.TextBoxFor(x => x.PoliklinikAdı, new { @class = "form-control" })
+    @Html.HiddenFor(x=>x.PoliklinikID)
+    <br />
+    <button type="submit">Kaydet</button>
+</form>
+

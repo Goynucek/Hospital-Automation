@@ -1,0 +1,28 @@
+﻿@using HastaneOtomasyonu.EntityLayer.Models.Entity
+@model List<Muayane>
+
+
+@{
+    ViewData["Title"] = "HastaGecmis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <th scope="row">@x.MuayaneZamanı</th>
+                <td><a href="/Doktor/TeshisDetay/@x.MuayaneId">Teşhis</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

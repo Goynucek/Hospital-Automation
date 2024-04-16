@@ -1,0 +1,14 @@
+﻿@model HastaneOtomasyonu.EntityLayer.Models.Entity.Muayane
+@{
+    ViewData["Title"] = "Teshis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Teshis</h1>
+<br />
+<form class="form-group" method="post">
+    <label>Teşhis Giriniz:</label>
+    @Html.TextBoxFor(x => x.Teshis, new { @class = "form-control" })
+    @Html.HiddenFor(x=>x.MuayaneId)
+    <button type="submit">Kaydet</button>
+</form>
